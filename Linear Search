@@ -1,0 +1,31 @@
+//Linear Search
+#include<stdio.h>
+int seqSearch(int arr[],int n,int key)
+{
+	int index;
+	for(index=0;index<n;index++)
+	{
+		if(key==arr[index])
+		   return index;
+	}
+	return  -1;
+}
+
+void main()
+{
+	int arr[10],key,i,n,result;
+	printf("\nEnter the size:");
+	scanf("%d",&n);
+	printf("Enter the Elements :");
+	for(i=0;i<n;i++)
+	{
+	scanf("%d",&arr[i]);
+    }
+    printf("Enter the element to search:");
+    scanf("%d",&key);
+    result=seqSearch(arr,n,key);
+    if(result>=0)
+    printf("Present at %d",result+1);
+    else
+    printf("Not Found");
+}
