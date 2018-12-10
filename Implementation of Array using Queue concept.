@@ -1,40 +1,5 @@
 
-Conversation opened. 2 messages. All messages read.
 
-Skip to content
-Using Gmail with screen readers
-kumar77643@gmail.com 
-
-1 of 9
-(no subject)
-Inbox
-x
-
-SASI KUMAR <kumar77643@gmail.com>
-Attachments
-Fri, Oct 26, 8:09 AM
-to SYED, me
-
-
-31 Attachments
-
-Sai Anand <crewatmsa@gmail.com>
-Attachments
-Fri, Oct 26, 3:34 PM
-to Surisrikanth479
-
-
-
----------- Forwarded message ---------
-From: SASI KUMAR <kumar77643@gmail.com>
-Date: Fri, Oct 26, 2018 at 8:09 AM
-Subject: 
-To: SYED SHAHID BASHA <shahid75184@gmail.com>, Sai Anand <crewatmsa@gmail.com>
-
-
-
-
-31 Attachments
 
 #include <stdio.h>
 #define size 5
@@ -135,5 +100,4 @@ void deleteq(int queue[])
     }
 }
 
-arrayqueue.c
-Displaying arrayqueue.c.
+
