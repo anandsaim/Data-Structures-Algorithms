@@ -1,0 +1,77 @@
+#include<stdio.h>
+#include<malloc.h>
+struct stack
+{
+    int *array;
+    int capacity;
+    int top;
+   
+};
+int isstackfull(struct stack s)
+{
+ if(s.top==s.capacity)
+return 1;
+else
+return 0;
+}
+void stackpush(struct stack *s,int element)
+{
+    if (isstackfull(*s))
+    {
+        printf("stack overflow");
+        return;
+       
+    }
+    s->array[s->top]=element;
+    s->top=s->top+1;
+   
+}
+
+    int isstackempty(struct stack s)
+    {
+        if(s.top==0)
+        return 1;
+        else
+        return 0;
+    }
+void stackpop(struct stack *s)
+{
+    if(isstackempty(*s))
+    {
+        printf("stack underflows");
+        return;
+       
+    }
+    s->top--;
+    printf("\npopped item:%d\n",s->array[s->top]);
+
+}
+void stackdisplay(struct stack s);
+int main()
+{
+    struct stack s;
+    s.top=0;
+    s.capacity=10;
+    s.array=(int*)malloc(s.capacity*sizeof(int));
+    stackpush(&s,10);
+    stackpush(&s,20);
+    stackpush(&s,30);
+        stackpush(&s,12);
+    stackdisplay(s);
+    stackpop(&s);
+    stackpop(&s);
+    stackpop(&s);
+    stackpop(&s);
+}
+void stackdisplay(struct stack s)
+{
+    int i;
+    printf("\nstack content:\n");
+    if(isstackempty(s))
+    {
+        printf("stack enderflows");
+        return;
+    }
+    for(i=s.top-1;i>=0;i--)
+    printf("\n%d",s.array[i]);
+}
