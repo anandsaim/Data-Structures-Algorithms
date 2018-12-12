@@ -1,0 +1,98 @@
+#include<stdio.h>
+#include<malloc.h>
+struct stack
+{
+	char *array;
+	int capacity;
+	int top;
+};
+
+int isStackEmpty(struct stack S)
+{
+	if(S.top==0)
+	return 1;
+	else
+	return 0;
+}
+
+void stackPush(struct stack *S,char element)
+{
+if(isStackFull(*S))
+   return ;
+   S->array[S->top]=element;
+   S->top++;	
+}
+
+int isStackFull(struct stack S)
+{
+	if(S.top==S.capacity)
+	return 1;
+	else
+	return 0;
+}
+
+char stackPop(struct stack *S)
+{
+	if(isStackEmpty(*S))
+	return '\0';
+	S->top--;
+	return S->array[S->top];
+}
+
+int checkBalance(char array[])
+{
+	int i;
+	struct stack S;
+	S.top=0;
+	S.capacity=10;
+	S.array=(char*)malloc(S.capacity*sizeof(char));
+	for(i=0;array[i]!='\0';i++)
+	{
+		  if((array[i]=='{')||(array[i]=='[')||(array[i]=='('))
+		  {
+		    stackPush(&S,array[i]);
+		}
+	    	else if(array[i]=='}')
+		    {
+		       if(stackPop(&S)!='{')
+		     return 0;	
+			}
+		  else if(array[i]==']')
+		  {
+		  	if(stackPop(&S)!='[')
+		  	 return 0;
+		  }
+		                            
+		  else if(array[i]==')' )
+		  {
+		  	if(stackPop(&S)!='(')
+		  	 return 0;
+		  }
+		            
+	}
+	    if(isStackEmpty(S))
+	           return 1;
+	    else 
+	           return 0;
+}
+
+void main()
+{
+	int result=0;
+	char expr[20];
+    struct stack S;
+	S.top=0;
+	S.capacity=10;
+	S.array=(char*)malloc(S.capacity*sizeof(char));
+	printf("Enter the expression:");
+	scanf("%s",expr);
+	result=checkBalance(expr);
+	if(result)
+	{
+	printf("\n Expression is  balanced in terms of Symbols");
+    }
+	else
+	{
+	printf("\n Expression is not balanced in terms of Symbols");
+    }
+}
