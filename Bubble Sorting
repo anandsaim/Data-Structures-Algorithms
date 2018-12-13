@@ -1,0 +1,34 @@
+// Bubble sort
+#include<stdio.h>
+int n;
+void bubble (int a[10]);
+void main()
+{
+ int i,a[10];
+ printf("\n\t\t BUBBLE SORT\n");
+ printf("\n\nEnter the number of elements : ");
+ scanf("%d",&n);
+ printf("Enter the elements :\n");
+ for(i=0;i<n;i++)
+  scanf("%d",&a[i]);
+  bubble(a);
+}
+void bubble(int a[10])
+{
+ int i,j,temp;
+ for(i=0;i<=n-2;i++)
+ {
+  for(j=0;j<=n-2-i;j++)
+  {
+   if(a[j]>a[j+1])
+   {
+    temp=a[j];
+    a[j]=a[j+1];
+    a[j+1]=temp;
+   }
+  }
+ }
+ printf("\n The sorted list is : ");
+ for(i=0;i<n;i++)
+ printf("\n\t%d\n",a[i]);
+}	            
