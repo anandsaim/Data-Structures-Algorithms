@@ -1,0 +1,47 @@
+#include<stdio.h>
+
+	struct employee
+{
+int idno[10];
+char name[10],des[6];
+int bs,hra,cca,pf,loan,tax,netsal,da;
+}s[60];
+
+void main()
+{
+
+int m,k;
+printf("enter the details of number of employees");
+scanf("%d",&m);
+for(k=0;k<=m;k++)
+{
+	printf("enter reg no");
+	scanf("%d",s[k].idno);
+	printf("enter name");
+	scanf("%s",s[k].name);
+	printf("enter designation");
+	scanf("%s",s[k].des);
+	printf("enter basic pay");
+	scanf("%d",s[k].bs);
+	printf("enter hra");
+	scanf("%d",s[k].hra);
+	printf("enter da");
+	scanf("%d",s[k].da);
+	printf("enter cca");
+	scanf("%d",s[k].cca);
+	printf("enter pf");
+	scanf("%d",s[k].pf);
+	printf("enter loan");
+	scanf("%d",s[k].loan);
+	printf("enter tax");
+	scanf("%d",s[k].tax);
+	s[k].netsal=(s[k].bs+s[k].hra+s[k].da+s[k].cca)-(s[k].pf+s[k].loan+s[k].tax);
+	printf("netsalary=%d",s[k].netsal);
+	int x=update_salary();
+	printf("%d",x);
+}
+void update_salary(struct employee s[k],int newsal)
+{
+	newsal=s[k].netsal+(s[k].netsal*20)/100;
+}
+}
