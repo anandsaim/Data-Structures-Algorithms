@@ -1,0 +1,32 @@
+//INSERTION SORT
+
+#include<stdio.h>
+int a[50];
+int n;
+void insort(int a[],int n);
+void main()
+{
+ int i;
+ printf("\n\n	INSERTION SORT\n");
+ printf("Enter the number of elements in the array\n");
+ scanf("%d",&n);
+ printf("Enter the elements\n");
+ for(i=0;i<n;i++)
+  scanf("%d",&a[i]);
+ insort(a,n);
+ printf("After sorting\n");
+ for(i=0;i<n;i++)
+  printf("%d\n",a[i]);
+}
+void insort(int a[],int n)
+{
+ int j,p;
+ int tmp;
+ for(p=1;p<n;p++)
+ 	{
+  tmp=a[p];
+    for(j=p;j>0&&a[j-1]>tmp;j--)
+    a[j]=a[j-1];
+    a[j]=tmp;
+ }
+}
